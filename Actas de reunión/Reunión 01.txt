@@ -1,0 +1,39 @@
+REUNIÓN DE TESIS JG: Procesamiento de imágenes satelitales multitemporales de alta resolución para el análisis de la bahía de Ferrol.
+*******************
+
+Fecha: 01 de julio de 2020
+Presentes: Giuliana, Jhon
+
+01. Agenda:
+01.01. Alcances generales de la forma de trabajo.
+
+02. Acuerdos:
+02.01. Administrativo.
+02.02.01. Contactar con la universidad y verificar que el procedimiento de titulación tipo M1 (por tesis) siga vigente con el modelo de 2018.
+02.02.02. Contactar con el profesor Emanuel para que de su visto bueno para el inicio de la tesis (documento que acepte ello).
+02.02.03. Carta al director de la escuela con el tema de la tesis.
+02.02.04. Resumen ejecutivo.
+02.02.05. FUT.
+02.02. Técnico.
+02.02.01. Fenómeno físico: Transporte de sedimento, corrientes marinas.
+02.02.02. Algoritmo de reconocimiento para la identificación de la erosión o sedimentación.
+02.02.02. Desarrollo de script para:
+02.02.02.01. Scrapeo de las imagenes satelitales Landsat. (
+02.02.02.02. Filtering: Entender el archivo de la imagen Landsat y con esto solamente tomar los valores que nos interesen.
+02.02.02.03. OpenCV con Python , procesar imagenes y que aprenda el computador.
+02.02.02. Escritura de la tesis de LaTeX.
+02.02.03. Reposotio en Github.
+
+
+
+
+03. Asignaciones:
+03.03.01. Contactar con la universidad y averiguar la situación de sustentación de tesis mediante modalidad M1. Responsable: Giuliana y Jhon, Fecha al 02/07/2020
+03.03.02. Validar procedimiento de titulación tipo M1 (por tesis) siga vigente con el modelo de 2018. Responsable: Giuliana y Jhon, Fecha al 02/07/2020
+03.03.03. Contactar con el profesor Emanuel a fecha y comentar nuevo inicio. Responsable: Jhon, Fecha 02/07/2020.
+03.03.04. Subir documentos de LaTeX a un repositorio en Github.  Responsable: Jhon, Fecha 02/07/2020.
+03.03.05. Instalar software con librerías en el ordenador. Responsable: Giuliana, Fecha al 02/07/2020
+03.03.06. Literatura compartida. Responsable: Jhon, Fecha 02/07/2020.
+
+
+
