@@ -1,0 +1,5 @@
+01. Archivos editables del plan de tesis:
+Se encuentran en la carpeta con nombre "Plan de tesis V02", el archivo a sido generado mediante el software Texmaker para su edicición mediante LaTeX, la última versión que se entrego esta con nombre "Plan_tesis_v12.pdf".
+
+02. Archivo presentado en su versión final en formato pdf:
+Se encuentra en la carpeta con nombre "Presentado a UNMSM" con nombre "Plan_tesis_v12.pdf".

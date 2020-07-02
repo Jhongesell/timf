@@ -1,0 +1,136 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage{times} 
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{listings} %Inserta código en el archivo
+\usepackage{graphicx} %Inserta imagenes en el archivo
+%\usepackage{cite} % para contraer referencias
+%\usepackage{lscape} %cambia la horientación de la página a horizontal
+\usepackage{hyperref} %permite insertar direcciones web
+
+%\usepackage{fullpage}
+
+
+\begin{document}
+
+\title{Desarrollo de un software hidrosedimentario como herramienta open-source para el análisis de los ríos en el Perú}
+\author{Villanueva Portella, Jhon Gesell}
+\date{20/03/2019}
+\maketitle
+\section{Relevancia y problema de la investigación}
+Un paquete hidro-sedimentario ayuda al entendimiento de la mecánica de fluidos en la interacción que llega a existir entre un afluente y los sedimentos en suspención que se encuentran en él, los datos que se podrían procesar permitirían la pronta acción por parte de las autoridades pertinentes para prevenir riesgos debido a las altas precipitaciones que llegan a haber en épocas de máximas avenidas; en el norte del Perú en los departamentos de Piura y Tumbes es muy usual que en las épocas de máximas avenidas ocurran inundaciones en los centros poblados aguas abajo; la data histórica hidrológica en muchos apartados del interior del país no se ha gestionado bien, debido a ello los especialistas técnicos no logran del todo hacer buenos estudios definitivos para los proyectos de prevención de desastres y desarrollo urbano.
+
+El poder contar con los cálculos hidráulicos de los caudales medios, máximos y mínimos a lo largo del tiempo, almacenar correctamente la información y visualizarla es una necesidad principal para que de manera permanente se encuentre la información de primera mano a disposición del cuerpo de ingenieros que estudian la hidrología y cambio climático.
+
+Las tecnologías hoy disponibles en el mercado no logran satisfacer las necesidades en nuestro país ya que no cuentan con bases de datos tomados en los aforos y de los cálculos hidráulicos, los software se hacen inaccesibles por la insuficiencia de fondos para la renovación de licencias evitando de esta manera que tanto municipalidades, centros de investigación y centros de estudios superiores no puedan participar en el estudio de los ríos en el Perú. Se debe entender también que hasta la fecha de esta investigación solamente se llegó a identificar un software que lograba esta tarea de gestionar la información e imprimir resultados gráficos, aunque su desarrollador Philippe Vauchel hidrólogo del IRD (Instituto Francés de Investigación para el Desarrollo) ya lo ha discontinuado, los alcances que esté presentaba eran de almacenar los datos en una base de datos para el gestor de Microsoft Office Access, por ello al día de hoy lo que se encuentra en el mercado son software que permiten visualizar resultados más no almacenar la información, y lo que llegan a ser visualizadores tienen un estado de dependencia con otros software como lo es Matlab, además que su comportamiento de estos es la de una caja negra ya que no permiten ver el código fuente del programa de computadora restringido unicamente a un sistema operativo.
+
+\section{Hipótesis}
+	%El software que se propone desarrollar a través de la investigación permitirá almacenar datos recolectados mediante el ADCP Rio Grande de 1200 kHz y las muestras de sedimentos en suspención procesadas en una base de datos, mostrará resultados gráficos individuales y superpuestos de los campos de velocidad y perfiles de concentración de sedimentos en todas las celdas en escala de colores para la sección del río con los valores de la velocidad en coordenadas cartesianas, puntos de perfiles de concentración de sedimentos en diferentes profundides para cada punto de muestreo en el transecto, calculo del caudal por profundidad  instantaneo, caudal promedio del periodo en estudio para secciones de monitoreo de las estaciones hidrológicas.
+
+Mediante el software en desarrollo se podrá obtener los caudales instantaneos que varían en función a la profundidad, este cálculo será el resultado de haber hecho uso de ecuaciones de continuidad y las ecuaciones de Saint-Venant en 1D que permiten estudiar los cambios del caudal.
+
+Un software intuitivo es ideal para el analisis del estado de los ríos, pero sobre todo el entendimiento de las ecuaciones son las que permiten al desarrollador resolver problemas mediante las ecuaciones fundamentales de la mecánica de fluidos trayendo así oportunidades para nuevas tecnologías.
+
+El uso de las tecnologias open-source permite la posibilidad del desarrollo en comunidad con diferentes colaboradores interesados en el tema, pudiendo ser de formación de las escuelas relacionadas a la mecánica de fluidos.
+
+	\section{Objetivos de la investigación}
+	\subsection{Ojetivos Generales}
+	\begin{itemize}
+	\item Crear un software hidrosedimentario con interfaz gráfica de usuario.
+	\item Brindar un producto que ayude a los científicos e ingenieros que trabajan con fluídos geofísicos.
+	\item Entregar un producto open-source para la comunidad científica internacional.
+	\end{itemize}
+	\subsection{Objetivos Específicos}
+	\begin{itemize}
+	\item Crear una lectura de archivos de caudales.
+	\item Crear un formulario para insertar los datos de las muestras se sedimentos.
+	\item Crear una base de datos.
+	\item Gráficar la sección del río para visualizar las cotas de fondo y los valores de sedimentos en suspensión.
+	\item Cálculo de caudales por profundidad instantanea.
+	\item Cálculo promedio de caudales máximos y mínimos para un periodo.
+	\end{itemize}
+\section{Metodología}
+
+La investigación obedecerá al siguiente flujo de trabajo:
+
+\begin{itemize}
+\item En el estudio del transporte de sedimentos en un flujo natural de agua considera al fluido en un régimen del tipo turbulento, esto se debe a multiples factores entre los cuales se podría señalar a los materiales que se vienen arrastrando por el río, la forma irregular de la sección de fondo, entre otros; mediante la ecuación de Reynold podría identificarse el régimen del río:
+
+%$$Re = \frac{\rho\cdot \nu }{\mu }$$ Ecuaciob	
+\begin{equation*}
+Re = \frac{\rho\cdot \nu }{\mu }
+\end{equation*}
+
+Variables:\\
+\begin{itemize}
+\item $Re$: Número de Reynold.
+\item $\rho$: Densidad del fluido.
+\item $\nu$: Viscosidad cinemática.
+\item $\mu$: Viscosidad dinámica.
+\end{itemize}
+
+
+\item El principio de conservación de masa dice que el caudal de entrada es igual al caudal de salida y por lo tanto el caudal de entrada $Q_1=Q_2$ respectivamente, para este estudio por su proximidad de los transectos que se hicieron muy cerca se podrá considerar la aproximanción de ambos caudales que se calculen.
+
+\item La ecuación de continuidad o de conservación de masa que señala que el caudal de entrada debe ser igual al caudal de salida, por lo tanto al haberse tomado muestras para una estación hidrológica. Durante el aforo en la visita a campo se desarrollaron se hizo el recorrido a 4 transectos los cuales se hicieron en tiempos cercanos, por ello se podría decir que el caudal en la sección del río son iguales.
+
+$$Q_1 = Q_2$$
+$$V_1\cdot A_2 =V_2\cdot A_2$$
+Donde:
+\begin{itemize}
+\item $Q$: Caudal.
+\item $V$: Velocidad promedio calculada.
+\item $A$: Área de la sección calculada para una profundidad dada.
+\end{itemize}
+
+
+\item Los sedimentos que trae el agua en suspensión tienen la misma velocidad que las moleculas de estas que las arrastran,esto se debe a que el transporte de sedimentos en suspención obedece al principio del movimiento ya que en algún momento estas partículas fueron desplazadas por la fuerza del agua que ejerció sobre su superficie, la presente investigación podrá analisar a los sedimentos en suspensión pues estas llegan a representar el 90\% o más en algunos casos de la cantidad de materiales sólidos que se encuentren en movimiento.
+
+Las formas de fondo juegan un rol muy importante en el comportamiento del rio ya que de estos existen de arena y grava, cuando se trata de una crecida del rio el movimiento se da hacia aguas abajo. Mediante las ecuaciones de Saint-Venant se puede hacer el cálculo del transito de una avenida.
+
+\end{itemize}
+
+
+
+\begin{itemize}
+\item Aforo en la estación hidrológica El Tigre: El fin es entender la forma de trabajo y los riesgos que llegan a tener para tomar las muestras las personas que aforan el río.
+\item Procesamiento de muestras en el laboratorio de agua y suelos: Se hace el filtrado de las muestras de sedimentos en rampas que cuentan con bombas de vacío y estas son metidas a la estufa para su secado y posterior pesado, finalmente toda la información es ordenada en una tabla impresa en papel.
+\item Los datos recopilados por el ADCP Rio Grande de 1200 kHz son ubicados en el disco duro de una computadora según una jerarquía de carpetas que debe respetarse.
+\item Se desarrollan mokaups tentativos para identificar todas las ventanas, menús y widgets con los que contará el software.
+\item Mediante el framework Qt Designer se crean los archivos GUI con extensión .ui que serán llamados posteriormente para dar funcionalidad al software en el backend.
+\item Se crea un nuevo archivo con la extensión del lenguaje de programación Python desde la cual se importan las librerías de PyQt5 y se importa el script de la GUI que había sido desarrollada gracias a Qt5 Designer, se dá funcionalidad a todos los objetos, se generan el esquema para la base de datos y otros componentes.
+\item Se resuelve la ecuaciones de continuidad.
+\item Se resuelve la ecuación de Saint-Venant.
+\item Se hace la compilación para los sistemas operativos Windows y Ubuntu mediante la librería Pyinstaller con el cual ya se podrá contar con un programa ejecutable, bastará con hacer doble clic en el programa para que este se abra y comience a trabajar el usuario.
+\item Se crea la Guía de Usuario y se sube el código fuente a un respositorio en Github.
+
+
+
+
+
+
+\end{itemize}
+
+
+
+
+\section{Bibliografía}
+\begin{itemize}
+	\item Martín. J. (2003). \textit{Ingeniería de ríos}, Mexico: Alfaomega Grupo Editor.
+	\item Rocha. A. (1998). \textit{Introducción a la hidráulica fluvial}, Perú: Universidad Nacional de Ingeniería.
+	\item Escuidier. M. (2017). \textit{Introduction to Engineering Fluid Mechanics}, Estados Unidos: Oxford University Press.
+	\item Gonzáles, R. (s.f.). \textit{Python para todos}. Recuperado de: \textbf{http://mundogeek.net/tutorial-python}
+	\item Coutinho, N. (2016). \textit{Introducción a la programación con Python: Algoritmos y lógica de programación para principiantes}, Brasil: Novatec Editora Ltda.
+	\item Harwani, B. (2018). \textit{Qt5 Python GUI Programming Cookbook: Building responsive and powerful cross-platform applications with PyQt}, Estados Unidos: Packt Publishing Ltd.
+	\item Owens, M. and Allen, G. (2010). \textit{The Definitive Guide to SQLite}, Estados Unidos: Springer.
+	\item Johansson, R. (2015). \textit{Numerical Python}, Estados Unidos: Springer
+	\item Carneiro, M. (2007). \textit{Manual de redacción superior}, Perú: Editorial San Marcos E.I.R.L.
+\end{itemize}
+
+
+\end{document}

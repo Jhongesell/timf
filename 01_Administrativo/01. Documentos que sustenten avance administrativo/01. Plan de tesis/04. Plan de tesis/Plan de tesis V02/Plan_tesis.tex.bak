@@ -1,0 +1,49 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+
+\begin{document}
+
+\title{Plan de tesis}
+\author{Villanueva Portella, Jhon Gesell}
+\date{24/06/2018}
+\maketitle
+
+\section{Introducci\'on}
+	\begin{itemize}
+	\item Importancia
+	\item Antecedentes
+	\item Justificaci\'on del m\'etodo utilizado
+	\item Valor agregado de nuestra propuesta	
+	\end{itemize}
+Un software hidro-sedimentario ayudará a que las personas puedan tomar mejores decisiones en la gesti\'on de los recursos h\'idricos y as\'i a la vez evitar que en \'epocas de m\'aximas avenidas ocurran desastres humanos, con esta herramienta lo que se busca constribuir a la comunidad cient\'ifica haciendo posible su acceso a todo el mundo.
+
+En el pasado ya se ha contado con herramientas privativas o en otros casos con programas no muy intuitivos para los usuarios finales.
+
+El m\'etodo utilizado es de sobre posición pasición de valores en una matríz raíz que representa los valores de posición en las coordenadas x, y y una tercera componente que es de de la velocidad.
+
+El software que se propone esta a la altura de otras herramientas con unas posibilidades abiertas de ser alojada en una plataforma web y de esta manera hacer computaci\'on en la nube con sistemas embebidos, por ahora buscamos hacer computaci\'on en un localhost que brinde posibilidades de acceso desde centros de estudio, centros de investigaci\'on o incluso para el sector privado; las herramientas que muchas veces podemos encontrar en el mercado tienen un costo que no permite acceder a ellas y por ser de consideraci\'on a los pa\'ises en v\'ias de desarrollo nuestra propuesta pretende beneficiar a ellos.
+	\subsection{Ojetivo General}
+	\begin{itemize}
+	\item Crear un software hidrosedimentario con interfaz gr\'afica de usuario.
+	\item Brindar un producto que ayude a los cient\'ificos e ingenieros que trabajan con flu\'idos geof\'isicos.
+	\item Entregar un producto open-source para la comunidad cient\'ifica internacional.
+	\end{itemize}
+	\subsection{Objetivo Espec\'ifico}
+	\begin{itemize}
+	\item Leer los archivos ASCII que nos brinda el equipo ADCP (Acoustic Doppler Current Profiler).
+	\item Crear un formulario para insertar los datos de las muestras se sedimentos.
+	\item Crear una base de datos.
+	\item Graficar la sección del r\'io para visualizar las cotas de fondo y los valores de sedimentos en suspensi\'on.
+	\item Crear
+	\end{itemize}
+
+	\subsection{Hip\'otesis}
+
+\section{Materiales y m\'etodos}
+\section{Resultados esperados}
+\section{Cronograma}
+\section{Discusiones}
+\section{Conclusiones}
+\section{Bibliograf\'ia}
+\end{document}

@@ -1,0 +1,216 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage{times} 
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{listings} %Inserta código en el archivo
+\usepackage{graphicx} %Inserta imagenes en el archivo
+%\usepackage{cite} % para contraer referencias
+%\usepackage{lscape} %cambia la horientación de la página a horizontal
+\usepackage{hyperref} %permite insertar direcciones web
+
+%\usepackage{fullpage}
+
+
+\begin{document}
+
+\title{Desarrollo de un software hidrosedimentario como herramienta para el análisis de los ríos en el Perú}
+\author{Villanueva Portella, Jhon Gesell}
+\date{03/04/2019}
+\maketitle
+\section{Determinación del problema y su relevancia de la investigación}
+
+\subsection{Planteamiento del problema}
+\begin{itemize}
+
+\item Problema general:
+	\begin{itemize}
+	\item ¿Es posible crear un software que ayude a los investigadores e ingenieros en el análisis de los ríos a partir de los datos aforados por un ADCP Rio Grande de 1200 kHz y de las muestras de sedimentos para una misma sección?
+	\end{itemize}
+\item Problemas específicos:
+	\begin{itemize}
+	\item ¿Cómo se ve el campo de velocidades para una sección del río?
+	\item ¿Cómo se ve en una gráfica superpuesta las concentraciones de sedimentos aforadas sobre el campo de velocidades?
+	\item ¿Qué método es el más adecuado para el cálculo del caudal a partir de la lectura de archivos ASCII brindados por el ADCP Rio Grande de 1200 kHz?
+	\item ¿Qué posibilidades representa crear un software GUI hidrosedimentario de este tipo para la mecánica de fluidos?
+	\item ¿Cuál es la importancia de una herramienta de este tipo en nuestra sociedad?
+	\end{itemize}
+\end{itemize}
+
+
+
+\subsection{Relevancia}
+Un paquete hidro-sedimentario ayuda a los profesionales para el entendimiento de la mecánica de fluidos y en la interacción que llega a existir entre un afluente y los sedimentos que trae suspención, la información obtenida mediante el procesamiento de los datos hará posible la prevención de riesgos de desastres debido a las altas precipitaciones que llegan todos los años en épocas de máximas avenidas; en el norte del Perú en los departamentos de Piura y Tumbes al tener la parte baja como zona tropical hace usual que en las épocas de máximas avenidas ocurran inundaciones en los centros poblados aguas abajo; la data histórica hidrológica en muchos apartados del interior del país han sido mal gestionados en su conservación, por ello los especialistas técnicos no logran del todo hacer buenos estudios definitivos para los proyectos de prevención de desastres y desarrollo urbano.
+
+El poder contar con los cálculos hidráulicos históricos de los caudales medios, máximos y mínimos, almacenar correctamente la información y visualizarla es una necesidad principal para que de manera permanente se cuente con la información de primera mano a disposición del cuerpo de ingenieros que estudian la hidrología y cambio climático.
+
+Las tecnologías hoy disponibles en el mercado no logran satisfacer las necesidades en nuestro país ya que no cuentan con bases de datos de los aforos tomados y tampoco cuentan de los cálculos hidráulicos almacenados, los software se hacen inaccesibles para los centros poblados por la insuficiencia de fondos para la renovación de licencias evitando de esta manera que tanto municipalidades, centros de investigación y centros de estudios superiores no puedan participar en el estudio de los ríos en el Perú. Se debe entender también que hasta la fecha de esta investigación solamente se llegó a identificar un software que lograba esta tarea de gestionar la información e imprimir resultados gráficos, aunque su desarrollador Philippe Vauchel hidrólogo del IRD (Instituto Francés de Investigación para el Desarrollo) ya lo ha discontinuado y ya se presentan incompatibilidades con nuevos softwares del cual esté tenía un estado de dependencia, los alcances que presentaba su software el HydroMESAD tenía la posibilidad de almacenar los datos aforados en una base de datos para el gestor de Microsoft Office Access, también al día de hoy lo que se encuentra en el mercado es un software que permiten visualizar resultados más no almacenar la información en una base de datos, y lo que llegan a ser visualizadores tienen un estado de dependencia con el lenguaje de programación Matlab, además que su comportamiento de estos es la de una caja negra ya que no permiten ver el código fuente del programa de computadora restringido unicamente a un sistema operativo.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Hipótesis}
+La lectura de los datos de cada archivo ASCII brindados por el software WinRiver II de la mano con el ADCP Rio 1200 kHz nos permitirá hacer una interpolación para encontrar una ecuación que logre describir la sección de fondo del río de manera discreta; sobre los datos del archivo ASCII, dentro de esta se encuentra información de la posición global satelital en grados para la altitud, longitud en grados y profundidad metros.
+
+Lo adecuado será hacer una conversión de la posición global en grados al sistema de coordenadas UTM (Universal Transversal Mercator) para hallar un sistema de referencia con la cual podamos describir una función $ f(x) $ e invertiremos los valores de la profundidad para hallar el área bajo la curva; al tratarse de los ríos del Perú en la vertiente del Pacífico los caudales no son tan exageradamente altos por lo que el espejo de agua no tiene un valor muy elevado, es así que no se considera la curvatura de la tierra para su obtención, por ello no hacemos uso del método de la distancia ortodrómica.
+
+Contando con los archivos ASCII almacenados en una carpeta contenedora su lectura será inmediata y así mismo será puesta en una base de datos de la estación en estudio, es así como podremos contar con información de los caudales y campos de velocidad.
+
+Mediante este software en desarrollo se podrá obtener los caudales instantaneos para cada profundidad media, este cálculo será el resultado de haber hecho las operaciones para la ecuación de continuidad que gobiernan a los fluidos.
+
+Un software intuitivo es ideal para el analisis del estado de los ríos, pero sobre todo el entendimiento de las ecuaciones son las que permiten al desarrollador resolver problemas mediante las ecuaciones fundamentales de la mecánica de fluidos trayendo así oportunidades para nuevas tecnologías.
+
+El uso de las tecnologias open-source permite la posibilidad del desarrollo en comunidad con diferentes colaboradores interesados en el tema, pudiendo ser de formación de las escuelas relacionadas a la mecánica de fluidos.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Objetivos de la investigación}
+	\subsection{Ojetivos Generales}
+	\begin{itemize}
+	\item Crear un software hidrosedimentario con interfaz gráfica de usuario.
+	\item Brindar un producto que ayude a los científicos e ingenieros que trabajan con fluídos geofísicos.
+	\item Mediante el software hidrosedimentario ayudar a los profesionales en el análisis y comprensión de los ríos.
+	\item Entregar un producto open-source para la comunidad científica internacional.
+	\end{itemize}
+	\subsection{Objetivos Específicos}
+	\begin{itemize}
+	\item Crear una lectura de archivos de caudales.
+	\item Crear un formulario para insertar los datos de las muestras se sedimentos.
+	\item Crear una base de datos.
+	\item Gráficar la sección del río para visualizar las cotas de fondo y los valores de sedimentos en suspensión.
+	\item Cálculo del área de la sección del río mediante el método de integración 
+	\item Cálculo de caudales por profundidad instantanea.
+	\item Cálculo promedio de caudales máximos y mínimos para un periodo.
+	\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\section{Metodología}
+La investigación obedecerá al siguiente flujo de trabajo:
+
+\subsection{Conversión de coordenadas}
+Es importante para la geodecía considerar las deformaciones que llegan a presentarse sobre la superficie terrestre y de esta manera se llegó a proponer la creación y utilización de los husos, que vienen a ser divisiones que permiten trabajar en la superfice terrestre, sobre estas han sido dividida en 60 husos, los cuales se comienzan a enumerar desde el meridiano de Greenwich hacia el Este siguiendo la dirección de Sur hacia Norte.
+
+\subsection{Sistema de coordenadas geográficas}
+El sistema de coordenadas es el más utilizado ya que su notación es más amigable para el entendimiento humano, consiste en elementos expresados en grados, minutos y segundos.
+\begin{itemize}
+\item Donde:
+	\begin{itemize}
+	\item 60 Grados: Representa a la cantidad de husos de la tierra.
+	\item 1 Grado: 60 minutos
+	\item 1 minuto: 60 segundos
+	\end{itemize}
+\end{itemize}
+Esta distribución se da para la latitud y la longitud.
+
+\subsection{Sistema UTM (Universal Transversal Mercator)}
+Las coordenadas UTM son una manera sencilla de representar distancias mediante la combinación de letras y números que se dividen en tres partes del cuerpo, la primera es una combinación de un número y una letra, la segunda representa la latitud y la tercera la longitud, ambas son en metros.
+
+\subsection{Interpolación y ajustes de curva}
+Mediante un conjunto de datos discretizados de la forma:
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\textbf{x}    & x0    & x1    & x2    & ... &  & ... & x(n-3)    & x(n-2)    & x(n-1)    & x(n)    \\ \hline
+\textbf{f(x)} & f(x0) & f(x1) & f(x2) & ... &  & ... & f(x(n-3)) & f(x(n-2)) & f(x(n-1)) & f(x(n)) \\ \hline
+\end{tabular}
+\end{table}
+
+
+Se hará uso del método de Newton ya que se cuenta con pocos puntos para el dominio, y en este método a mayor cantidad de puntos para el dominio se tendrá un mayor grado del polinomio; para este método lo primero que se debe hacer es el calculo de la pendiente cuya forma es:
+
+$$ f_{i}(x_{0}, x_{1}, ... , x_{i-1}, x_{i}) = \frac{(f_{i-1}(x_{1}, ... , x_{i-1}, x_{i})) - (f_{i-1}(x_{0}, x_{1}, ... , x_{i-1}) )}{x_{i} - x_{0}} $$
+
+\begin{itemize}
+\item Donde:
+	\begin{itemize}
+	\item $ x_{i} - x_{j} $ es la distancia que hay entre dos elementos.
+	\end{itemize}
+\end{itemize}
+
+Definiendo el polinomio:
+Cuando se cuenta con la pendiente la tarea de definir el polinomio para un grado $n$ se hace mediante el esquema general:
+
+$$ p_{i}(x) = p_{i-1}(x) + f_{i}(x_{0}, x_{1}, ... , x_{i-1}, x_{i})\prod_{j=0}^{i-1}(x-x_{j}) $$
+
+
+\subsection{Integración mediante el método del trapecio}
+El cálculo del área para superficies irregulares podría llegar a representar una tarea algo tediosa sino fueran por las matemáticas, gracias a la integración por el método del trapecio esta se tarea se hace más sencilla, consiste en la división del dominio en muchos pequeñas secciones, de modo que al evaluar las cotas en una función $f(x)$ que describa la curva, bastará con hallár la integral para esta, dando como resultado el área bajo la curva.
+
+La ecucación que ayuda este proceso se expresa de la siguiente manera:
+
+$$ A = \int_{a}^{b} f(x) dx $$
+$$A = (b-a)\cdot [\frac{(f(a)+f(b))}{2}]$$
+
+
+\subsection{Cálculo del caudal para el fluido}
+Habiendo obtenido el área de la sección del río mediante la ecuciación de continuidad podemos hacer comparaciones de caudales y promediarlos para los transectos hechos durante un aforo.\\
+
+Ya que el campo de velocidades del aforo muestra que estas no son homogeneas la relación de $Q= A * v$ donde Q: Caudal {m3/s}, A: Área {m2}, v: Velocidad {m2/s} , por lo tanto esta ecuación no es solución al problema.
+
+Se hace el cálculo del caudal para velocidades no uniformes mediante la integral:
+
+\[Q = \iint_{a}^{b}v\cdot dS\]
+
+\begin{itemize}
+\item Donde:
+\begin{itemize}
+\item $Q$: Caudal (m3/s)
+\item $a, b$: Cotas de los extremos del río en un sistema de referencia.
+\item $v$: Velocidad promedio
+\item $dS$: Vector superfice que se define como $dS = n\cdot dS$ , $n$ es el vecotr unitario normal a la superficie y $dS$ un elemento diferendial de área.
+\end{itemize}
+\end{itemize}
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Bibliografía}
+\begin{itemize}
+	\item Martín. J. (2003). \textit{Ingeniería de ríos}, Mexico: Alfaomega Grupo Editor.
+	\item Rocha. A. (1998). \textit{Introducción a la hidráulica fluvial}, Perú: Universidad Nacional de Ingeniería.
+	\item Instruments, R. D. (2013). \textit{WorkHorse Rio Grande ADCP User’s Guide}. San Diego, CA.: RI Instruments, 
+	\item Instruments, R. D. (2018). \textit{WinRiver II user's guide}, San Diego, CA.: RD Instruments.
+	\item Escuidier. M. (2017). \textit{Introduction to Engineering Fluid Mechanics}, Estados Unidos: Oxford University Press.
+	\item Gonzáles, R. (s.f.). \textit{Python para todos}. Recuperado de: \textbf{http://mundogeek.net/tutorial-python}
+	\item Coutinho, N. (2016). \textit{Introducción a la programación con Python: Algoritmos y lógica de programación para principiantes}, Brasil: Novatec Editora Ltda.
+	\item Hill, C. (2016). Learning scientific programming with Python. Estados Unidos: Cambridge University Press.
+	\item Harwani, B. (2018). \textit{Qt5 Python GUI Programming Cookbook: Building responsive and powerful cross-platform applications with PyQt}, Estados Unidos: Packt Publishing Ltd.
+	\item Owens, M. and Allen, G. (2010). \textit{The Definitive Guide to SQLite}, Estados Unidos: Springer.
+	\item Johansson, R. (2015). \textit{Numerical Python}, Estados Unidos: Springer
+	\item Carneiro, M. (2007). \textit{Manual de redacción superior}, Perú: Editorial San Marcos E.I.R.L.
+\end{itemize}
+
+
+\end{document}
