@@ -1,0 +1,23 @@
+REUNIÓN DE TESIS JG: Procesamiento de imágenes satelitales multitemporales de alta resolución para el análisis de la bahía de Ferrol.
+*******************
+
+Fecha: 02 de julio de 2020
+Presentes: Giuliana, Jhon
+
+01. Agenda:
+01.01. Revisión de asignaciones anteriores.
+01.02. Desarrollo de hitos de la tesis de investigación.
+
+02. Acuerdos:
+02.02.01. La UNMSM se encuentra trabajando de manera remota, 
+02.02.02. Modelo de titulación M1 sigue vigente desde el formato del 2018.
+02.02.03. Profesor de acuerdo para avanzar con investigación de tesis.
+02.02.04. El repositirio TIMF ha sido actualizado con archivos administrativos.
+02.02.05. Instaló Temaker , Github desktop y bash.
+02.02.06. Ya esta listo en cuanto a transporte de sedimentos.
+
+03. Asignaciones:
+03.03.01. Coordinar reunión telefónica con el asesor a fecha 02/07/2020. Jhon Gesell
+03.03.02. Enviar disponibilidad de horario Giuliana a Jhon, al correo. 02/07/2020.
+03.03.03. Elaboración de hitos del desarrollo de la tesis. Responsable: Giuliana, fecha: 06/07/2020.
+03.03.04. Reunión 03/07/2020 a las 18:00 horas
